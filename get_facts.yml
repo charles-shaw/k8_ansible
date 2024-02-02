@@ -21,13 +21,11 @@
     ansible.builtin.debug:
       var: api_status.keys()
       
-  - name: Search for all running pods
+  - name: Get a list of all pods from any namespace
     kubernetes.core.k8s_info:
       kind: Pod
-      field_selectors:
-        - status.phase=Running
-    register: pods
+    register: pod_list
 
   - name: Show running pods
     ansible.builtin.debug:
-      var: pods
+      var: pod_list
