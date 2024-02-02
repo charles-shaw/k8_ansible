@@ -56,7 +56,7 @@
              spec:
                containers:
                - name: leader
-                 image: k8s.gcr.io/redis:e2e  # or just image: redis
+                 image: registry.redhat.io/rhel9/redis-6:1-164  # or just image: redis
                  resources:
                    requests:
                      cpu: 100m
@@ -110,7 +110,7 @@
              spec:
                containers:
                - name: follower
-                 image: gcr.io/google_samples/gb-redisslave:v1
+                 image: registry.redhat.io/rhel9/redis-6:1-164
                  resources:
                    requests:
                      cpu: 100m
@@ -168,7 +168,7 @@
              spec:
                containers:
                - name: php-redis
-                 image: gcr.io/google-samples/gb-frontend:v4
+                 image: registry.redhat.io/rhel9/redis-6:1-164
                  resources:
                    requests:
                      cpu: 100m
