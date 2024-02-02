@@ -29,3 +29,10 @@
   - name: Show running pods
     ansible.builtin.debug:
       var: pod_list
+  - name: Fetch a list of namespaces
+    set_fact:
+      projects: "{{ query('kubernetes.core.k8s', api_version='v1', kind='Namespace') }}"
+
+  - name: show name spaces
+    ansible.builtin.debug:
+      var: projects
